@@ -154,7 +154,8 @@ if [ -n "${OEM}" ]; then
   FLAVOR="${OEM}_"
 fi
 
-IMAGE_URL="http://storage.core-os.net/coreos/amd64-generic/${VERSION}/coreos_production_${FLAVOR}image.bin.bz2"
+BASE_URL="http://storage.core-os.net/coreos/amd64-generic/${VERSION}/coreos_production_${FLAVOR}image.bin"
+IMAGE_URL="${BASE_URL}.bz2"
 DIGESTS_URL="${IMAGE_URL}.DIGESTS.asc"
 IMAGE_NAME="${IMAGE_URL##*/}"
 DIGESTS_NAME="${DIGESTS_URL##*/}"
