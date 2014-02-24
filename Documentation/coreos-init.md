@@ -10,15 +10,15 @@ Only a subset of [cloud-config functionality][cloud-config] is implemented. A se
 
 ### Supported cloud-config Parameters
 
-#### users
+#### ssh_authorized_keys
 
-The only supported user that may be modified is `core`. No new users may be added. Modification of the `core` user is limited to the addition of authorized public SSH keys.
+Provided public SSH keys will be authorized for the `core` user.
 
 ### Custom cloud-config Parameters
 
-#### coreos.etcd.discovery-url
+#### coreos.etcd.discovery_url
 
-The value of `coreos.etcd.discovery-url` will be used to discover the instance's etcd peers using the [etcd discovery protocol][disco-proto]. Usage of the [public discovery service][disco-service] is encouraged.
+The value of `coreos.etcd.discovery_url` will be used to discover the instance's etcd peers using the [etcd discovery protocol][disco-proto]. Usage of the [public discovery service][disco-service] is encouraged.
 
 [disco-proto]: https://github.com/coreos/etcd/blob/master/Documentation/discovery-protocol.md
 [disco-service]: http://discovery.etcd.io
@@ -36,7 +36,7 @@ echo 'Hello, world!'
 
 ## Examples
 
-### Inject an SSH key bootstrap etcd using cloud-config
+### Inject an SSH key and bootstrap an etcd cluster using cloud-config
 
 ```
 #cloud-config
